@@ -1,8 +1,8 @@
-import { RomanNumerals } from '../src/roman-numerals';
+import { RomanNumeral } from '../src/roman-numeral';
 
-describe('RomanNumerals', () => {
-  it('parse()', () => {
-    const instance = new RomanNumerals();
+describe('RomanNumeral', () => {
+  it('parseInt()', () => {
+    const instance = new RomanNumeral();
 
     expect(instance.parseInt(1)).toBe('I');
     expect(instance.parseInt(2)).toBe('II');
@@ -43,5 +43,35 @@ describe('RomanNumerals', () => {
     expect(instance.parseInt(589)).toBe('DLXXXIX');
     expect(instance.parseInt(943)).toBe('CMXLIII');
     expect(instance.parseInt(1943)).toBe('MCMXLIII');
+  });
+
+  it('parseString()', () => {
+    const instance = new RomanNumeral();
+
+    expect(instance.parseString('I')).toBe(1);
+    expect(instance.parseString('II')).toBe(2);
+    expect(instance.parseString('III')).toBe(3);
+    expect(instance.parseString('IV')).toBe(4);
+    expect(instance.parseString('V')).toBe(5);
+    expect(instance.parseString('VI')).toBe(6);
+    expect(instance.parseString('VII')).toBe(7);
+    expect(instance.parseString('VIII')).toBe(8);
+    expect(instance.parseString('IX')).toBe(9);
+    expect(instance.parseString('X')).toBe(10);
+    expect(instance.parseString('XI')).toBe(11);
+    expect(instance.parseString('XII')).toBe(12);
+    expect(instance.parseString('XIII')).toBe(13);
+    expect(instance.parseString('XIV')).toBe(14);
+    expect(instance.parseString('XV')).toBe(15);
+    expect(instance.parseString('XIX')).toBe(19);
+    expect(instance.parseString('XX')).toBe(20);
+    expect(instance.parseString('XXX')).toBe(30);
+    expect(instance.parseString('XXXI')).toBe(31);
+    expect(instance.parseString('XXXIV')).toBe(34);
+    expect(instance.parseString('XXXIX')).toBe(39);
+    expect(instance.parseString('XL')).toBe(40);
+    expect(instance.parseString('XLIX')).toBe(49);
+    expect(instance.parseString('L')).toBe(50);
+    expect(instance.parseString('MMDCCCXLIV')).toBe(2844);
   });
 });

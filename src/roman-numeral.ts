@@ -1,4 +1,4 @@
-export class RomanNumerals {
+export class RomanNumeral {
   static numberPairs = [
     { number: 1000, prefix: 'M' },
     { number: 900, prefix: 'CM' },
@@ -18,10 +18,22 @@ export class RomanNumerals {
   parseInt(input: number) {
     if (input === 0) return '';
 
-    const { number, prefix } = RomanNumerals.numberPairs.find(
+    const { number, prefix } = RomanNumeral.numberPairs.find(
       ({ number }) => input >= number
     );
 
     return prefix + this.parseInt(input - number);
+  }
+
+  parseString(input: string) {
+    if (input === '') return 0;
+
+    const { number, prefix } = RomanNumeral.numberPairs.find(({ prefix }) =>
+      input.startsWith(prefix)
+    );
+
+    const trimmed = input.slice(prefix.length);
+
+    return number + this.parseString(trimmed);
   }
 }
