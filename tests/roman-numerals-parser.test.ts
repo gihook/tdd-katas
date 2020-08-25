@@ -1,0 +1,47 @@
+import { RomanNumerals } from '../src/roman-numerals';
+
+describe('RomanNumerals', () => {
+  it('parse()', () => {
+    const instance = new RomanNumerals();
+
+    expect(instance.parseInt(1)).toBe('I');
+    expect(instance.parseInt(2)).toBe('II');
+    expect(instance.parseInt(3)).toBe('III');
+    expect(instance.parseInt(4)).toBe('IV');
+    expect(instance.parseInt(5)).toBe('V');
+    expect(instance.parseInt(6)).toBe('VI');
+    expect(instance.parseInt(7)).toBe('VII');
+    expect(instance.parseInt(8)).toBe('VIII');
+    expect(instance.parseInt(9)).toBe('IX');
+    expect(instance.parseInt(10)).toBe('X');
+    expect(instance.parseInt(11)).toBe('XI');
+    expect(instance.parseInt(12)).toBe('XII');
+    expect(instance.parseInt(13)).toBe('XIII');
+    expect(instance.parseInt(14)).toBe('XIV');
+    expect(instance.parseInt(15)).toBe('XV');
+    expect(instance.parseInt(16)).toBe('XVI');
+    expect(instance.parseInt(17)).toBe('XVII');
+    expect(instance.parseInt(18)).toBe('XVIII');
+    expect(instance.parseInt(19)).toBe('XIX');
+    expect(instance.parseInt(20)).toBe('XX');
+    expect(instance.parseInt(21)).toBe('XXI');
+    expect(instance.parseInt(22)).toBe('XXII');
+    expect(instance.parseInt(35)).toBe('XXXV');
+    expect(instance.parseInt(40)).toBe('XL');
+    expect(instance.parseInt(41)).toBe('XLI');
+    expect(instance.parseInt(49)).toBe('XLIX');
+    expect(instance.parseInt(50)).toBe('L');
+    expect(instance.parseInt(58)).toBe('LVIII');
+    expect(instance.parseInt(79)).toBe('LXXIX');
+    expect(instance.parseInt(84)).toBe('LXXXIV');
+    expect(instance.parseInt(90)).toBe('XC');
+    expect(instance.parseInt(95)).toBe('XCV');
+    expect(instance.parseInt(100)).toBe('C');
+    expect(instance.parseInt(153)).toBe('CLIII');
+    expect(instance.parseInt(342)).toBe('CCCXLII');
+    expect(instance.parseInt(400)).toBe('XD');
+    expect(instance.parseInt(589)).toBe('DLXXXIX');
+    expect(instance.parseInt(943)).toBe('CMXLIII');
+    expect(instance.parseInt(1943)).toBe('MCMXLIII');
+  });
+});
