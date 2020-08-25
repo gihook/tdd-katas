@@ -2,18 +2,15 @@ export class PrimeFactors {
   static generate(input: number) {
     const factors = [];
     let rest = input;
+    let devider = 2;
 
-    if (input % 3 === 0) {
-      factors.push(3);
-      rest = rest / 3;
+    while (rest > 1) {
+      while (rest % devider === 0) {
+        factors.push(devider);
+        rest = rest / devider;
+      }
+      devider++;
     }
-
-    if (input % 2 === 0) {
-      factors.push(2);
-      rest = rest / 2;
-    }
-
-    if (rest !== 1) factors.push(rest);
 
     return factors;
   }
