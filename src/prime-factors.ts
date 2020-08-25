@@ -1,17 +1,18 @@
 export class PrimeFactors {
   static generate(input: number) {
-    const factors = [];
-    let rest = input;
-    let devider = 2;
+    return PrimeFactors.getPrimeFactors(input, []);
+  }
 
-    while (rest > 1) {
-      while (rest % devider === 0) {
-        factors.push(devider);
-        rest = rest / devider;
-      }
-      devider++;
+  private static getPrimeFactors(input: number, primeFactors: number[]) {
+    if (input === 1) return primeFactors;
+
+    for (let factor = 2; factor <= input; factor++) {
+      if (input % factor !== 0) continue;
+
+      return PrimeFactors.getPrimeFactors(input / factor, [
+        ...primeFactors,
+        factor,
+      ]);
     }
-
-    return factors;
   }
 }

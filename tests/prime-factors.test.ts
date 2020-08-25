@@ -13,6 +13,8 @@ describe('PrimeFactors', () => {
     expect(PrimeFactors.generate(10)).toEqual([2, 5]);
     expect(PrimeFactors.generate(11)).toEqual([11]);
     expect(PrimeFactors.generate(12)).toEqual([2, 2, 3]);
+    expect(PrimeFactors.generate(2 * 2 * 3 * 5)).toEqual([2, 2, 3, 5]);
+    expect(PrimeFactors.generate(2 * 2 * 3 * 5 * 7)).toEqual([2, 2, 3, 5, 7]);
     expect(PrimeFactors.generate(2 * 2 * 3 * 3 * 5 * 5 * 7 * 11 * 13)).toEqual([
       2,
       2,
